@@ -1,20 +1,15 @@
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-57622-11']);
-_gaq.push(['_trackPageview']);
+// Pronunceable passwords generator 
+// based on https://github.com/allixsenos/passwds-ninja-web
+// Modified by mir on the Atlantic Ocean
 
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
-})();
+var template = ['Cvccvc99','Cvccvv99','99vlcvcc','Vlcvcv99','9Alcvcvc'];
 
-var template = 'Cvccvc99';
 
 function generatePasswords(template, number) {
     var chars = {}
     chars['l'] = 'abcdefghijklmnoprstuvwxyz';
     chars['U'] = chars['l'].toUpperCase();
-    chars['v'] = 'aeiouy';
+    chars['v'] = 'aeiouaeiouaeioaeioaeioy';
     chars['V'] = chars['v'].toUpperCase();
     chars['c'] = 'bcdfghjklmnprstvwxz';
     chars['C'] = chars['c'].toUpperCase();
@@ -28,8 +23,9 @@ function generatePasswords(template, number) {
     var passwords = [];
     for (i = 0; i < number; i++) {
         password = '';
-        for (c = 0; c < template.length; c++) {
-            possible = chars[template.charAt(c)];
+        var chosentemplate = template[Math.floor(Math.random() * template.length)]
+        for (c = 0; c < chosentemplate.length; c++) {
+            possible = chars[chosentemplate.charAt(c)];
             password += possible.charAt(Math.floor(Math.random() * possible.length));
         }
         passwords.push(password);
