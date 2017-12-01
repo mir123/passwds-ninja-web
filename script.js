@@ -2,16 +2,17 @@
 // based on https://github.com/allixsenos/passwds-ninja-web
 // Modified by mir on the Atlantic Ocean
 
-var template = ['Cvccvc99','Cvccvv99','99vlcvcc','Vlcvcv99','9Alcvcvc'];
+var template = ['Cvccvc99','Cvccvlv99','99vlcvcc','Vlcvcv99','9Avlvcvc'];
 
 
 function generatePasswords(template, number) {
+ // Character repetitions are based on frequency in English language
     var chars = {}
-    chars['l'] = 'abcdefghijklmnoprstuvwxyz';
+    chars['l'] = 'yyuuuoooooooiiiiiiieeeeeeeeeeeeaaaaaaaayyuuuoooooooiiiiiiieeeeeeeeeeeeaaaaaaaabbbcccccddddddddffffgggghhhhhhhhhhhhjkkllllllllmmmmnnnnnnnnnnnnppppqrrrrrrrrrrssssssssssssttttttttttttttttttvvwwwwxyyyyz';
     chars['U'] = chars['l'].toUpperCase();
-    chars['v'] = 'aeiouaeiouaeioaeioaeioy';
+    chars['v'] = 'yyuuuoooooooiiiiiiieeeeeeeeeeeeaaaaaaaa' 
     chars['V'] = chars['v'].toUpperCase();
-    chars['c'] = 'bcdfghjklmnprstvwxz';
+    chars['c'] = 'bbbcccccddddddddffffgggghhhhhhhhhhhhjkkllllllllmmmmnnnnnnnnnnnnppppqrrrrrrrrrrssssssssssssttttttttttttttttttvvwwwwxyyyyz';
     chars['C'] = chars['c'].toUpperCase();
     chars['9'] = '0123456789';
     chars['#'] = '!@#$%^&*_-+=()[]{}';
@@ -35,7 +36,7 @@ function generatePasswords(template, number) {
 }
 
 function doPasswords() {
-  passwords = generatePasswords(template, 10);
+  passwords = generatePasswords(template, 12);
 
   var passwordlist = $("ul#passwords");
   $.each(passwords, function(i, password) {
