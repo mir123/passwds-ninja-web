@@ -10,8 +10,10 @@ function generatePasswords(template, number) {
     var chars = {}
     chars['l'] = 'yyuuuoooooooiiiiiiieeeeeeeeeeeeaaaaaaaayyuuuoooooooiiiiiiieeeeeeeeeeeeaaaaaaaabbbcccccddddddddffffgggghhhhhhhhhhhhjkkllllllllmmmmnnnnnnnnnnnnppppqrrrrrrrrrrssssssssssssttttttttttttttttttvvwwwwxyyyyz';
     chars['U'] = chars['l'].toUpperCase();
-    chars['v'] = 'yyuuuoooooooiiiiiiieeeeeeeeeeeeaaaaaaaa' 
+    chars['v'] = 'yyuuu0oooooo1iiiiii3eeeeeeeeeee4aaaaaaayyuuuoooooooiiiiiiieeeeeeeeeeeeaaaaaaaa' 
     chars['V'] = chars['v'].toUpperCase();
+    chars['x'] = 'yyuuuoooooooiiiiiiieeeeeeeeeeeeaaaaaaaa' 
+    chars['X'] = chars['v'].toUpperCase();
     chars['c'] = 'bbbcccccddddddddffffgggghhhhhhhhhhhhjkkllllllllmmmmnnnnnnnnnnnnppppqrrrrrrrrrrssssssssssssttttttttttttttttttvvwwwwxyyyyz';
     chars['C'] = chars['c'].toUpperCase();
     chars['9'] = '0123456789';
@@ -36,7 +38,7 @@ function generatePasswords(template, number) {
 }
 
 function doPasswords() {
-  passwords = generatePasswords(template, 12);
+  passwords = generatePasswords(template, 8);
 
   var passwordlist = $("ul#passwords");
   $.each(passwords, function(i, password) {
